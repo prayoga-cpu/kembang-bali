@@ -1,7 +1,7 @@
 {
   "name": "kembang-bali",
   "version": "1.0.0",
-  "description": "Bilingual (EN/ID/ZH/FR/KO/JA) marketing site for Kembang Bali Home Spa Service, a mobile massage and spa booking service across Bali, built with Next.js and booked entirely over WhatsApp.",
+  "description": "Multilingual (EN/ID/ZH/FR/KO/JA/RU) marketing site for Kembang Bali Home Spa Service, a mobile massage and spa booking service across Bali, built with Next.js and booked entirely over WhatsApp.",
   "private": true,
   "license": "UNLICENSED",
   "author": "Darwin Prayoga <prayogadevelopment@gmail.com>",

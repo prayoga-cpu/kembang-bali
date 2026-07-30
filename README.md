@@ -1,12 +1,12 @@
 # Kembang Bali Home Spa Service
 
-A bilingual (six-locale) marketing site for **Kembang Bali Home Spa Service** — a mobile massage and spa business that brings therapeutic treatments to villas, hotels, and homes across Bali. Every booking flows through a single channel: WhatsApp.
+A multilingual (seven-locale) marketing site for **Kembang Bali Home Spa Service** — a mobile massage and spa business that brings therapeutic treatments to villas, hotels, and homes across Bali. Every booking flows through a single channel: WhatsApp.
 
 Built with [Next.js](https://nextjs.org) (App Router), React, and TypeScript.
 
 ## Features
 
-- **Six languages, no routing.** English, Indonesian, Simplified Chinese, French, Korean, and Japanese copy live side by side in `app/page.tsx`; a client-side toggle swaps the active locale instantly, no page reload.
+- **Seven languages, no routing.** English, Indonesian, Simplified Chinese, French, Korean, Japanese, and Russian copy live side by side in `app/page.tsx`; a client-side toggle swaps the active locale instantly, no page reload.
 - **WhatsApp-first booking.** Every CTA — the hero button, the quick-booking strip, each treatment card, the footer — deep-links to `wa.me` with a pre-filled message in the visitor's active language, including the specific treatment and price when booking a package.
 - **Content-driven sections.** Hero, treatment menu, "how it works," service policy, coverage areas, testimonial, FAQ, and footer are all rendered from one typed content object per locale — editing copy never touches JSX.
 - **Design system.** Adapted from the Spavilla reference: Noto Serif Display + Lexend type, a navy/coral/periwinkle palette, pill buttons, and blush service cards. Tokens live at the top of `app/globals.css`.
@@ -54,7 +54,7 @@ This is intentionally a single-route, single-page site — there is no `app/(rou
 
 ## Editing content
 
-All copy lives in `content` (English and Indonesian, written out in full) and `localizedContent` (Chinese, French, Korean, Japanese, which spread `content.en` and override only what's translated) near the top of `app/page.tsx`. To add a treatment, edit a price, or change any section's copy, edit the relevant locale's object — the JSX below only maps over these objects and never needs to change for content edits.
+All copy lives in `content` (English, Indonesian, and Russian, written out in full) and `localizedContent` (Chinese, French, Korean, Japanese, which spread `content.en` and override only what's translated) near the top of `app/page.tsx`. To add a treatment, edit a price, or change any section's copy, edit the relevant locale's object — the JSX below only maps over these objects and never needs to change for content edits.
 
 To add a new locale: add its `Locale` union member, add an entry to `locales` (the toggle list), and add a full translation object to `localizedContent`.
 

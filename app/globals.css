@@ -4,18 +4,24 @@
    ========================================================================== */
 
 :root {
-  /* Palette */
-  --dark: #11104a;
-  --heading-font-color: #11104a;
-  --body-font-color: #313161;
-  --skin-color: #716fcd;
-  --secondary-skin-color: #fd8763;
-  --grey-color: #fff4f1;
-  --secondary-grey-color: #d1d0e1;
+  /* Palette — exact ink colors from the Kembang Bali brand mark assets
+     (icon logo terracotta, text logo dark/grey), plus warm sand neutrals. */
+  --dark: #242621;
+  --heading-font-color: #242621;
+  --body-font-color: #55534e;
+  --skin-color: #6b6659;
+  --secondary-skin-color: #ae7136;
+  --grey-color: #faf5ef;
+  --secondary-grey-color: #e5dccf;
   --secondary-body-font-color: rgba(255, 255, 255, 0.85);
   --border-color-dark: rgba(0, 0, 0, 0.2);
   --border-color-light: rgba(255, 255, 255, 0.2);
   --white: #fff;
+
+  /* Two-tone brand lockup ink — overridden to white/muted-white on dark
+     sections (navbar-over-hero, footer) so the logo stays legible there. */
+  --brand-word-color: #242621;
+  --brand-tagline-color: #89897d;
 
   /* Radii */
   --border-radius-20: 20px;
@@ -28,8 +34,8 @@
   --section-y: 100px;
 
   /* Type */
-  --heading-font: var(--font-heading), "Noto Serif Display", Georgia, serif;
-  --body-font: var(--font-body), Lexend, ui-sans-serif, system-ui, sans-serif;
+  --heading-font: var(--font-heading), "Newsreader", Georgia, serif;
+  --body-font: var(--font-body), "Public Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
 * {
@@ -94,17 +100,20 @@ h4 {
 
 h1 {
   font-size: clamp(45px, 6vw, 85px);
-  line-height: 1.14;
+  letter-spacing: 0.005em;
+  line-height: 1.15;
 }
 
 h2 {
   font-size: clamp(35px, 3.6vw, 50px);
-  line-height: 1.2;
+  letter-spacing: 0.015em;
+  line-height: 1.3;
 }
 
 h3 {
   font-size: 26px;
-  line-height: 36px;
+  letter-spacing: 0.03em;
+  line-height: 38px;
 }
 
 p {
@@ -120,7 +129,7 @@ p {
   font-size: 15px;
   font-weight: 400;
   gap: 9px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.14em;
   line-height: 26px;
   margin: 0 0 14px;
   text-transform: uppercase;
@@ -230,6 +239,8 @@ p {
    -------------------------------------------------------------------------- */
 
 .navbar {
+  --brand-word-color: var(--white);
+  --brand-tagline-color: rgba(255, 255, 255, 0.7);
   align-items: center;
   background: transparent;
   border-bottom: 1px solid transparent;
@@ -248,9 +259,11 @@ p {
 }
 
 .navbar.navbar-scrolled {
+  --brand-word-color: var(--heading-font-color);
+  --brand-tagline-color: var(--body-font-color);
   background: var(--white);
   border-bottom-color: var(--border-color-dark);
-  box-shadow: 0 10px 30px rgba(17, 16, 74, 0.08);
+  box-shadow: 0 10px 30px rgba(36, 38, 33, 0.08);
   color: var(--heading-font-color);
   padding-bottom: 16px;
   padding-top: 16px;
@@ -260,13 +273,12 @@ p {
   align-items: center;
   color: inherit;
   display: inline-flex;
-  font-family: var(--heading-font);
-  font-size: 24px;
-  font-style: italic;
-  font-weight: 400;
-  gap: 10px;
-  line-height: 30px;
+  gap: 12px;
   white-space: nowrap;
+}
+
+.brand-wordmark {
+  flex: 0 0 auto;
 }
 
 .brand-icon {
@@ -284,6 +296,7 @@ p {
   color: inherit;
   font-size: 16px;
   font-weight: 500;
+  letter-spacing: 0.03em;
   line-height: 26px;
   opacity: 0.92;
   padding: 10px 16px;
@@ -385,10 +398,10 @@ p {
   background:
     linear-gradient(
       180deg,
-      rgba(17, 16, 74, 0.55) 0%,
-      rgba(17, 16, 74, 0.22) 32%,
-      rgba(17, 16, 74, 0.42) 68%,
-      rgba(17, 16, 74, 0.8) 100%
+      rgba(36, 38, 33, 0.55) 0%,
+      rgba(36, 38, 33, 0.22) 32%,
+      rgba(36, 38, 33, 0.42) 68%,
+      rgba(36, 38, 33, 0.8) 100%
     ),
     url("https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=1800&q=85");
   background-position: center;
@@ -1007,6 +1020,8 @@ details p {
    -------------------------------------------------------------------------- */
 
 footer {
+  --brand-word-color: var(--white);
+  --brand-tagline-color: rgba(255, 255, 255, 0.7);
   background: var(--dark);
 }
 
@@ -1022,17 +1037,34 @@ footer {
   grid-template-columns: 5fr 2fr 3fr 3fr;
 }
 
-.footer-title {
-  color: var(--white);
-  font-family: var(--heading-font);
-  font-size: clamp(30px, 2.6vw, 37px);
-  font-weight: 400;
-  line-height: 1.4;
-  margin: 0;
-  text-transform: none;
+.footer-logo {
+  align-items: center;
+  display: inline-flex;
+  gap: 16px;
 }
 
-.footer-brand p {
+.footer-logo-icon {
+  color: var(--secondary-skin-color);
+  flex: 0 0 auto;
+}
+
+.footer-logo-wordmark {
+  flex: 0 0 auto;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.footer-brand-copy {
   color: rgba(255, 255, 255, 0.7);
   margin: 18px 0 28px;
   max-width: 420px;
@@ -1231,7 +1263,7 @@ a.footer-widget-text:hover {
     padding: 12px 16px;
   }
 
-  .brand span:last-child {
+  .brand-wordmark {
     display: none;
   }
 
@@ -1240,7 +1272,7 @@ a.footer-widget-text:hover {
     min-width: 0;
   }
 
-  /* Six locales have to fit beside the brand mark and the booking CTA. */
+  /* Seven locales have to fit beside the brand mark and the booking CTA. */
   .lang-toggle {
     max-width: calc(100vw - 186px);
   }

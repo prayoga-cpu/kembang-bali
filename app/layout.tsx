@@ -1,17 +1,18 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
-import { Lexend, Noto_Serif_Display } from "next/font/google";
+import { Newsreader, Public_Sans } from "next/font/google";
 import "./globals.css";
 import { siteName, siteUrl } from "./site-config";
 
-const headingFont = Noto_Serif_Display({
+const headingFont = Newsreader({
   subsets: ["latin"],
   weight: ["400", "500"],
+  style: ["normal", "italic"],
   display: "swap",
   variable: "--font-heading",
 });
 
-const bodyFont = Lexend({
+const bodyFont = Public_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500"],
   display: "swap",
@@ -61,7 +62,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#11104a",
+  themeColor: "#242621",
 };
 
 export default function RootLayout({
