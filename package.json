@@ -1,0 +1,49 @@
+{
+  "name": "kembang-bali",
+  "version": "1.0.0",
+  "description": "Bilingual (EN/ID/ZH/FR/KO/JA) marketing site for Kembang Bali Home Spa Service, a mobile massage and spa booking service across Bali, built with Next.js and booked entirely over WhatsApp.",
+  "private": true,
+  "license": "UNLICENSED",
+  "author": "Darwin Prayoga <prayogadevelopment@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prayoga-cpu/kembang-bali.git"
+  },
+  "bugs": {
+    "url": "https://github.com/prayoga-cpu/kembang-bali/issues"
+  },
+  "homepage": "https://github.com/prayoga-cpu/kembang-bali#readme",
+  "keywords": [
+    "bali",
+    "home-spa",
+    "massage",
+    "spa-booking",
+    "whatsapp-booking",
+    "nextjs",
+    "landing-page"
+  ],
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "lucide-react": "^1.27.0",
+    "next": "^16.2.12",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.2.12",
+    "typescript": "^6.0.3"
+  }
+}
